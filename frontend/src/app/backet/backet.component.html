@@ -1,0 +1,29 @@
+<div class = 'body'>
+
+<h3>Cart</h3>
+
+<div class="cart-items">
+  <div class="cart-item" *ngFor="let item of items">
+    <span class="item-name">{{ item.name }}</span>
+    <span class="item-price">{{ item.price | currency }}</span>
+  </div>
+  <h4 style="text-align: right;">Total Price: {{ calculateTotal() | currency }}</h4>
+</div>
+
+<h3>Order Form</h3>
+
+<form>
+  <div class="form-field">
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" placeholder="Enter your name">
+  </div>
+
+  <div class="form-field">
+    <label for="address">Address</label>
+    <input id="address" type="text" formControlName="address" placeholder="Enter your address">
+  </div>
+
+  <button class="order-button" (click)="onSubmit()">Order</button>
+</form>
+
+</div>

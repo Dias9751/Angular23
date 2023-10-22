@@ -1,0 +1,10 @@
+<h1 class="rest" style="text-align: center; margin: 30px;">Restaurant</h1>
+ 
+<div class="table-like-div">
+  <div class="table1" *ngFor="let r of restaurants">
+    <img class="img-rest" src = '{{r.ph_restaurant}}' width="300px" height="300px">
+    <p>description:{{r.address}}</p>
+    <h1><a routerLink="/delivery_companies/restaurants/categories">{{r.name}}</a></h1>
+  </div>
+</div>
+<br><br>

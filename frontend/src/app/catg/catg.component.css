@@ -1,0 +1,17 @@
+.table-like-div{
+    text-align: center;
+}
+  
+.table1 {
+    width:24%;
+    height:500px;
+    display: inline-block;
+    
+}
+
+img{
+    border-radius: 50%; /* Create a circular shape */
+    object-fit: cover; /* Maintain aspect ratio and cover the circle */
+    margin: 10px;
+    height: 250px;
+}

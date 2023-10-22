@@ -1,0 +1,52 @@
+body{
+    background-image: url("https://kroosp.ru/wp-content/uploads/2018/05/restorany.jpg");
+    text-align: center; 
+}
+.rest-info{
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    background-color: #FAE7B5; 
+    align-items: center;
+    text-align: center; 
+}
+.img-rest{
+    padding: 60 60;
+    text-align: center; 
+    margin-bottom: 60;
+} 
+
+.bt{
+    background: linear-gradient(180deg, #716fff 0%, #4945ff 100%);
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 1px;
+    text-align: center;
+    letter-spacing: 0.02cm;
+    border: none;
+    padding: 17px 14px;
+    margin: 10px;
+}
+
+img{
+    border-radius: 50%; /* Create a circular shape */
+    object-fit: cover; /* Maintain aspect ratio and cover the circle */
+    margin: 10px;
+}
+
+.table-like-div{
+    text-align: center;
+}
+  
+.table1 {
+    width:24%;
+    height:500px;
+    display: inline-block;
+    
+}
+
+input{
+    margin: 10px;
+}

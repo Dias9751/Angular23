@@ -1,0 +1,13 @@
+<h1 style="text-align: center; margin: 30px;">Delivery company</h1>
+ 
+<div class="table-like-div">
+  <div *ngFor="let d of deliveries" class="table1">
+    <img src = '{{d.ph_delivery}}' width="300px" height="300px">
+    <p>rating: {{d.rating}}</p>
+    <h1><a routerLink="/delivery_companies/restaurants">{{d.name}}</a></h1>
+    
+      <input type="text" [(ngModel)]="d.rating" style = "width: 40px;">
+      <button (click)="updateDelivery()" class = "bt">Save</button>
+    
+  </div>
+</div>

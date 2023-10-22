@@ -1,0 +1,8 @@
+<h1 style="text-align: center; margin: 30px;">Category</h1>
+
+<div class="table-like-div">
+  <div *ngFor="let c of categories" class="table1" >
+    <img src = '{{c.photo}}' width="70%">
+    <h1><a [routerLink]="['/delivery_companies/restaurants/categories', c.id]">{{c.name}}</a></h1>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.bt2{
+    background: linear-gradient(180deg, #716fff 0%, #4945ff 100%);
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1px;
+    text-align: center;
+    letter-spacing: 0.02cm;
+    color: #f7f7f8;
+    border: none;
+    padding: 17px 17px;
+    margin-top: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+
+
+.page {
+    display: flex;
+    text-align: center;
+    border-style: 2px solid #000;
+}
+  
+.left-column {
+    margin: 30px;
+    flex: 1;
+    border-right: 3px solid #000;
+    text-align: right;
+    margin: 40px;
+}
+  
+.right-column {
+    flex: 1;
+    
+    text-align: left;
+    margin: 40px;
+}
+
+img{
+    border-radius: 50%; /* Create a circular shape */
+    object-fit: cover; /* Maintain aspect ratio and cover the circle */
+    margin: 40px;
+}
+
+select{
+    transform: translate(630px, 1px);
+
+}

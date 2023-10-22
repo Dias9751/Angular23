@@ -1,0 +1,19 @@
+<select [(ngModel)]="selectedSortOption" (change)="sortProducts()">
+  <option value="priceAsc">Price Low to High</option>
+  <option value="priceDesc">Price High to Low</option>
+  <option value="nameAsc">Alphabetical A to Z</option>
+  <option value="nameDesc">Alphabetical Z to A</option>
+</select>
+<div class="page" *ngFor="let c of products">
+  <div class="left-column">
+    <img class="img" src = '{{c.ph_product}}' width="500" height="500">
+  </div>
+  <div class="right-column">
+    <h1>Products</h1>
+
+    <h2><br> {{c.name}}</h2>
+    <h4><br> {{c.description}}</h4>
+    <h3><br> {{c.price}}</h3>
+    <button class="bt2" type="button" (click)="addToCart(c)">Buy</button>
+  </div>
+</div>
