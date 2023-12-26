@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {AuthToken, Delivery, Restaurant, Category, Product, Login_to} from './models';
+import { catchError } from 'rxjs/operators';
  
 @Injectable({
   providedIn: 'root'
@@ -71,5 +72,23 @@ export class CompanyService {
 
   updateProduct(delivery: Product): Observable<Product> {
     return this.http.put<Product>(`${this.BASE_URl}/admin/menu/product/${delivery.id}/change/`, delivery);
+  }
+
+  updatePost(postData: Delivery): Observable<Delivery> {
+    const url = `${this.BASE_URl}/delivery_companies/`;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+
+    return this.http
+      .put<Delivery>(this.BASE_URl, postData, httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  private handleError(error: any): Observable<never> {
+    console.error('An error occurred', error);
+    return new Observable(observable => observable.complete());
   }
 }

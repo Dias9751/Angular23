@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import datetime
+import datetime, os
 from django.conf import settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

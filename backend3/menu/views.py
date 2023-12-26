@@ -5,7 +5,8 @@ import json
 
 from rest_framework.permissions import IsAuthenticated
 
-from django.shortcuts import Http404
+#from django.shortcuts import Http404
+import logging
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
@@ -17,7 +18,7 @@ from django.views.decorators.csrf import csrf_exempt
 from menu.models import Category, Product, Restaurant, Delivery, Customer
 from menu.serializers import CategorySerializer3, CategorySerializer, CategorySerializer2, ProductSerializer, ProductSerializer2, RestaurantSerializer, DeliverySerializer, CustomerSerializer
 
-
+logger = logging.getLogger(__name__)
 
 class DeliveryListAPIView(APIView):
     def get(self, request):
@@ -31,6 +32,28 @@ class DeliveryListAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request, format=None):
+        serializer = DeliverySerializer(data=request.data) 
+        if serializer.is_valid():
+            # Check if the 'id' is present for an update
+            post_id = serializer.validated_data.get('id')
+            if post_id:
+                # Retrieve the existing post instance
+                existing_post = YourModel.objects.get(id=post_id)
+                # Update the existing post instance with new data
+                serializer = DeliverySerializer(existing_post, data=request.data)
+                if serializer.is_valid():
+                    serializer.save()
+                    return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+
+
 
 class RestaurantListAPIView(APIView):
     def get(self, request):
